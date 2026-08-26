@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Motion Trail Sculptor introduces frame differencing as a visual idea. A moving brightness centroid drives layered trails in sample mode or from a local camera, with controls for sensitivity and trail length." />
+    <title>Motion Trail Sculptor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="lab" aria-labelledby="title">
+      <header class="intro">
+        <p class="eyebrow">MOTION / TRAILS · local browser lab</p>
+        <h1 id="title">Motion Trail Sculptor</h1>
+        <p>A frame-difference study that turns local movement into generative trails.</p>
+        <div class="actions">
+          <button id="start-camera" type="button">Start camera</button>
+          <button id="use-sample" class="secondary" type="button">Use sample</button>
+          <button id="clear" class="secondary" type="button">Clear local state</button>
+          <button id="save" class="secondary" type="button">Save PNG</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Sample mode is ready. Camera permission has not been requested.</p>
+      </header>
+      <section class="workspace" aria-label="Interactive visual workspace">
+        <div class="input-panel panel">
+          <span class="panel-label">Input</span>
+          <video id="video" autoplay muted playsinline aria-label="Optional camera input"></video>
+          <div id="sample" class="sample" aria-hidden="true"></div>
+        </div>
+        <div class="output-panel panel">
+          <span class="panel-label">Processed output</span>
+          <canvas id="canvas" aria-label="Motion Trail Sculptor output"></canvas>
+        </div>
+      </section>
+      <p id="metrics" class="metrics">Pointer fallback · signal 0.50 · camera off</p>
+      <section class="notes" aria-label="Browser notes">
+        <h2>Local by default</h2>
+        <p>Camera access is optional and starts only after an explicit action. This project never uploads frames. If permission is denied, use the pointer and sample controls.</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
